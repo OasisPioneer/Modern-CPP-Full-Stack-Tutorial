@@ -10,20 +10,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
+      with:
+        persist-credentials: false
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x' # 使用 3.x 版本的 Python
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt # 假设您已经创建了 requirements.txt
+        pip install -r requirements.txt
 
     - name: Build HTML
-      run: |
-        make html # 或者使用 sphinx-build source build/html
+      run: make html
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      # if: github.ref == 'refs/heads/main'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/html
