@@ -2,11 +2,11 @@
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&letterSpacing=&pause=1000&center=true&vCenter=true&width=1024&height=100&lines=Modern+C%2B%2B+Full-Stack+Tutorial" alt="Typing SVG" />
 </div>
 
-<!-- <div align="center">
-    <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/actions/workflows/ci.yml"><img src="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
-    <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/blob/main/LICENSE"><img src="https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPOSITORY" alt="License"></a>
-    <a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/commits/main"><img src="https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPOSITORY" alt="Last Commit"></a>
-</div> -->
+<div align="center">
+    <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/actions/workflows/ci.yml"><img src="https://github.com/YOasisPioneer/Modern-CPP-Full-Stack-Tutorial/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/blob/main/LICENSE"><img src="https://img.shields.io/github/license/OasisPioneer/Modern-CPP-Full-Stack-Tutorial" alt="License"></a>
+    <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/commits/main"><img src="https://img.shields.io/github/last-commit/OasisPioneer/Modern-CPP-Full-Stack-Tutorial" alt="Last Commit"></a>
+</div>
 
 <div align="center">
     <h2>
