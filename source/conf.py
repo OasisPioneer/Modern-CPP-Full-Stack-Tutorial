@@ -17,6 +17,7 @@ author = '龙森'
 extensions = [
     'myst_parser',
     'sphinxcontrib.mermaid',
+    'sphinx_copybutton',
 ]
 source_suffix = {
     '.rst': 'restructuredtext',
