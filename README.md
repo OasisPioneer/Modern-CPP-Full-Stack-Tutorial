@@ -57,7 +57,7 @@
 <p align="center">
     强烈推荐您通过在线网站阅读本书，以获得最佳的排版和交互体验。
     <br>
-    <a href="www.demo.com"><strong>➡️ 点击这里开始阅读 ⬅️</strong></a>
+    <a href="https://oasispioneer.com/Modern-CPP-Full-Stack-Tutorial/"><strong>➡️ 点击这里开始阅读 ⬅️</strong></a>
 </p>
 
 <div align="center">
