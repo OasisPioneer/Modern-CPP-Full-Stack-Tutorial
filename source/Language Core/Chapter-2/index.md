@@ -4,7 +4,7 @@
 
 ```{toctree}
 :maxdepth: 6
-:caption: 基础语法:
 
 Section-01
+Section-02
 ```

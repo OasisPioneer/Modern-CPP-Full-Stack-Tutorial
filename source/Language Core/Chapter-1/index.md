@@ -4,7 +4,6 @@
 
 ```{toctree}
 :maxdepth: 6
-:caption: 学前准备:
 
 Section-01
 Section-02
