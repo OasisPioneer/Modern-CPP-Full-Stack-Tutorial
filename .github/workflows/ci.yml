@@ -29,6 +29,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Clean
+      run: make clean
+
     - name: Build HTML
       run: make html
     
