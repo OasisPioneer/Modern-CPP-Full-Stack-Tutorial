@@ -103,8 +103,10 @@ python3 -m venv .venv
 
 ```Bash
 pip install -U sphinx
-pip install --upgrade myst-parser
+pip install myst-parser
 pip install furo
+pip install sphinxcontrib-mermaid
+pip install sphinx-copybutton
 ```
 
 </details>
