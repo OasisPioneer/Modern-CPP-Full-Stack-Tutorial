@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-    <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/actions/workflows/ci.yml"><img src="https://github.com/YOasisPioneer/Modern-CPP-Full-Stack-Tutorial/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/actions/workflows/ci.yml"><img src="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
     <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/blob/main/LICENSE"><img src="https://img.shields.io/github/license/OasisPioneer/Modern-CPP-Full-Stack-Tutorial" alt="License"></a>
     <a href="https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial/commits/main"><img src="https://img.shields.io/github/last-commit/OasisPioneer/Modern-CPP-Full-Stack-Tutorial" alt="Last Commit"></a>
 </div>
