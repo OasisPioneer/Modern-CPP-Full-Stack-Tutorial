@@ -59,6 +59,7 @@ html_css_files = [
     'content.css',
 ]
 
+latex_additional_files = ['_static/Cover.png']
 latex_engine = 'xelatex'
 latex_elements = {
     'papersize': 'a4paper',
@@ -77,6 +78,17 @@ latex_elements = {
 \setlength{\cftchapnumwidth}{0.75cm}
 \setlength{\cftsecindent}{\cftchapnumwidth}
 \setlength{\cftsecnumwidth}{1.25cm}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+''',
+    'maketitle': r'''
+        \newgeometry{margin=0pt}
+            \begin{titlepage}
+                \thispagestyle{empty}
+                \centering
+                \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Cover.png}
+            \end{titlepage}
+        \restoregeometry
 ''',
     'sphinxsetup': 'TitleColor=DarkGoldenrod',
     'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
