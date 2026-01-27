@@ -1,0 +1,7 @@
+\newgeometry{margin=0pt}
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \centering
+        \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Cover.png}
+    \end{titlepage}
+\restoregeometry

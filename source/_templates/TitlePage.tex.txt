@@ -1,0 +1,31 @@
+\newgeometry{left=3cm, right=3cm, top=5cm, bottom=3cm}
+\begin{titlepage}
+    \thispagestyle{empty}
+    \pagestyle{empty}
+
+    \begin{center}
+        \Huge \textbf{Modern C++ Full-Stack Tutorial}
+    \end{center}
+
+    \vspace{0.5cm}
+
+    \begin{center}
+        \Huge \textbf{现代 C++ 全栈开发教程}
+    \end{center}
+
+    \vspace{2cm}
+
+    \begin{center}
+        \Large \textbf{作者: 龙森}
+    \end{center}
+
+    \vfill
+
+    \begin{center}
+        \small
+        \copyright \ 2026 龙森 版权所有 \quad | \quad 占位
+    \end{center}
+    
+\end{titlepage}
+\restoregeometry
+\pagestyle{plain}

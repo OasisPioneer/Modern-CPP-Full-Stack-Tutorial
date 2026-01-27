@@ -19,6 +19,7 @@ extensions = [
     'sphinxcontrib.mermaid',
     'sphinx_copybutton',
 ]
+
 source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'markdown',
@@ -54,12 +55,18 @@ html_theme_options = {
         },
     ],
 }
+
 html_static_path = ['_static']
 html_css_files = [
     'content.css',
 ]
 
-latex_additional_files = ['_static/Cover.png']
+latex_additional_files = [
+    '_static/Cover.png',
+    '_templates/CoverPage.tex.txt',
+    '_templates/TitlePage.tex.txt',
+]
+
 latex_engine = 'xelatex'
 latex_elements = {
     'papersize': 'a4paper',
@@ -82,17 +89,13 @@ latex_elements = {
 \usepackage{eso-pic}
 ''',
     'maketitle': r'''
-        \newgeometry{margin=0pt}
-            \begin{titlepage}
-                \thispagestyle{empty}
-                \centering
-                \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Cover.png}
-            \end{titlepage}
-        \restoregeometry
+        \input{CoverPage.tex.txt}
+        \input{TitlePage.tex.txt}
 ''',
     'sphinxsetup': 'TitleColor=DarkGoldenrod',
     'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
     'printindex': r'\footnotesize\raggedright\printindex',
     'extraclassoptions': 'openany,oneside',
 }
+
 latex_show_urls = 'footnote'
