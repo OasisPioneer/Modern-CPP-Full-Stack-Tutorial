@@ -61,6 +61,7 @@ html_css_files = [
     'content.css',
 ]
 
+# -- Options for LaTeX output ------------------------------------------------
 latex_additional_files = [
     '_static/Cover.png',
     '_templates/CoverPage.tex.txt',
@@ -68,6 +69,7 @@ latex_additional_files = [
 ]
 
 latex_engine = 'xelatex'
+latex_toplevel_sectioning = 'part'
 latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '11pt',
