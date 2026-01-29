@@ -83,19 +83,20 @@ latex_elements = {
 ''',
     'preamble': r'''
 \usepackage[titles]{tocloft}
-\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
-\setlength{\cftchapnumwidth}{0.75cm}
-\setlength{\cftsecindent}{\cftchapnumwidth}
-\setlength{\cftsecnumwidth}{1.25cm}
 \usepackage{graphicx}
 \usepackage{eso-pic}
+
+% \cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+% \setlength{\cftchapnumwidth}{0.75cm}
+% \setlength{\cftsecindent}{\cftchapnumwidth}
+% \setlength{\cftsecnumwidth}{1.25cm}
 ''',
     'maketitle': r'''
         \input{CoverPage.tex.txt}
         \input{TitlePage.tex.txt}
 ''',
     'sphinxsetup': 'TitleColor=DarkGoldenrod',
-    'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+    # 'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
     'printindex': r'\footnotesize\raggedright\printindex',
     'extraclassoptions': 'openany,oneside',
 }
