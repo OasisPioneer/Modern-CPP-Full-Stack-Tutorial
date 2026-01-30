@@ -1,7 +1,6 @@
 \newgeometry{left=3cm, right=3cm, top=5cm, bottom=3cm}
 \begin{titlepage}
     \thispagestyle{empty}
-    \pagestyle{empty}
 
     \begin{center}
         \Huge \textbf{Modern C++ Full-Stack Tutorial}
@@ -16,16 +15,30 @@
     \vspace{2cm}
 
     \begin{center}
-        \Large \textbf{作者: 龙森}
+        {\Large \textbf{龙森} \quad 著}
     \end{center}
 
     \vfill
 
-    \begin{center}
-        \small
-        \copyright \ 2026 龙森 版权所有 \quad | \quad 占位
-    \end{center}
+    \begin{flushleft}
+        \small \color{gray}
+        \rule{\textwidth}{0.4pt}
+        \vspace{0.3cm}
+        
+        \textbf{版权所有 © 2026 龙森} \\
+        \textcopyright\ 2026 Long Sen. All rights reserved.
+        
+        \vspace{0.4cm}
+        
+        本书内容受著作权法保护。未经出版人书面许可，不得以任何方式（包括但不限于复印、录制或通过任何信息存储和检索系统）复制或传播本书的任何部分。
+        
+        \vspace{0.4cm}
+        
+        \textbf{本书版本：} v1.0.0 \\
+        \textbf{最后更新：} \today \\
+        \textbf{GitHub：} \texttt{https://github.com/OasisPioneer/Modern-CPP-Full-Stack-Tutorial}
+        
+    \end{flushleft}
     
 \end{titlepage}
 \restoregeometry
-\pagestyle{plain}

@@ -69,6 +69,7 @@ latex_additional_files = [
 ]
 
 latex_engine = 'xelatex'
+latex_use_xindy = True
 latex_toplevel_sectioning = 'part'
 latex_elements = {
     'papersize': 'a4paper',
@@ -85,6 +86,25 @@ latex_elements = {
 \usepackage[titles]{tocloft}
 \usepackage{graphicx}
 \usepackage{eso-pic}
+
+% ===== ===== 设置目录标题 ===== =====
+\makeatletter
+    \renewcommand{\cftchappresnum}{第}
+    \renewcommand{\cftchapaftersnum}{章}
+    \setlength{\cftchapnumwidth}{4.5em}
+\makeatother
+% ===== ===== 设置文档标题 ===== =====
+\makeatletter
+    \renewcommand{\@makechapterhead}[1]{
+        {\parindent \z@ \centering \normalfont
+            \ifnum \c@secnumdepth >\m@ne
+            \Huge\bfseries 第\ \thechapter\ 章\quad #1\par\nobreak
+            \fi
+            \interlinepenalty\@M
+            \vspace*{20pt}
+        }
+    }
+\makeatother
 
 % \cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
 % \setlength{\cftchapnumwidth}{0.75cm}
