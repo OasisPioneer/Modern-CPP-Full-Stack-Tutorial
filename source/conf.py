@@ -89,6 +89,19 @@ latex_elements = {
 
 % ===== ===== 设置目录标题 ===== =====
 \makeatletter
+  \renewcommand{\tableofcontents}{%
+    \cleardoublepage
+    \chapter*{%
+        \vspace*{1.2cm}
+        \makebox[\textwidth][c]{\Huge\bfseries 目录}
+    }
+    \thispagestyle{empty}
+    \@mkboth{目录}{目录}
+    \@starttoc{toc}
+  }
+\makeatother
+
+\makeatletter
     \renewcommand{\cftchappresnum}{第}
     \renewcommand{\cftchapaftersnum}{章}
     \setlength{\cftchapnumwidth}{4.5em}
@@ -105,11 +118,6 @@ latex_elements = {
         }
     }
 \makeatother
-
-% \cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
-% \setlength{\cftchapnumwidth}{0.75cm}
-% \setlength{\cftsecindent}{\cftchapnumwidth}
-% \setlength{\cftsecnumwidth}{1.25cm}
 ''',
     'maketitle': r'''
         \input{CoverPage.tex.txt}
