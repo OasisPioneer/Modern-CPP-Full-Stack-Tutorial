@@ -78,45 +78,36 @@ latex_elements = {
 \PassOptionsToPackage{svgnames}{xcolor}
 ''',
     'fontpkg': r'''
+% [EN]
 \setmainfont{Source Han Sans SC}
 \setsansfont{Source Han Sans SC}
 \setmonofont{Fira Code}
+% [CN]
+\setCJKmainfont{Source Han Sans SC}
+\setCJKsansfont{Source Han Sans SC}
+\setCJKmonofont{Source Han Sans SC}
 ''',
     'preamble': r'''
-\usepackage[titles]{tocloft}
+\usepackage[UTF8, heading=true, fontset=none]{ctex}
 \usepackage{graphicx}
 \usepackage{eso-pic}
 
-% ===== ===== 设置目录标题 ===== =====
-\makeatletter
-  \renewcommand{\tableofcontents}{%
-    \cleardoublepage
-    \chapter*{%
-        \vspace*{1.2cm}
-        \makebox[\textwidth][c]{\Huge\bfseries 目录}
-    }
-    \thispagestyle{empty}
-    \@mkboth{目录}{目录}
-    \@starttoc{toc}
+\ctexset{
+  contentsname = {目录},
+  part = {
+    name = {第, 部分},
+    number = \chinese{part}
+  },
+  chapter = {
+    name = {第, 章},
+    number = \arabic{chapter},
+    format = \Huge\bfseries\centering
   }
-\makeatother
+}
 
 \makeatletter
-    \renewcommand{\cftchappresnum}{第}
-    \renewcommand{\cftchapaftersnum}{章}
-    \setlength{\cftchapnumwidth}{4.5em}
-\makeatother
-% ===== ===== 设置文档标题 ===== =====
-\makeatletter
-    \renewcommand{\@makechapterhead}[1]{
-        {\parindent \z@ \centering \normalfont
-            \ifnum \c@secnumdepth >\m@ne
-            \Huge\bfseries 第\ \thechapter\ 章\quad #1\par\nobreak
-            \fi
-            \interlinepenalty\@M
-            \vspace*{20pt}
-        }
-    }
+\renewcommand{\@pnumwidth}{2.5em}
+\renewcommand{\@tocrmarg}{3.5em}
 \makeatother
 ''',
     'maketitle': r'''
