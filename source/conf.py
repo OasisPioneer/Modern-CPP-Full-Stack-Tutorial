@@ -89,19 +89,46 @@ latex_elements = {
 ''',
     'preamble': r'''
 \usepackage[UTF8, heading=true, fontset=none]{ctex}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{eso-pic}
+
+\definecolor{ChapterColorScheme}{RGB}{24, 112, 125}
+\definecolor{SectionColorScheme}{RGB}{98, 137, 196}
+\definecolor{SubsectionColorScheme}{RGB}{88, 161, 174}
+
+\setlength{\parindent}{2em}
+\usepackage{indentfirst}
 
 \ctexset{
   contentsname = {目录},
   part = {
     name = {第, 部分},
-    number = \chinese{part}
+    number = \chinese{part},
+    pagestyle = empty           % 强制页面不带页码
   },
   chapter = {
     name = {第, 章},
     number = \arabic{chapter},
-    format = \Huge\bfseries\centering
+    fixskip = true,
+    format = \Huge\bfseries\color{ChapterColorScheme}\centering,
+    beforeskip = 0pt, 
+    afterskip = 15pt,
+    aftertitle = {\par\vspace{-15pt}\rule{\textwidth}{2pt}} 
+  },
+  section = {
+    name = {第, 节},
+    number = \arabic{section},
+    format = \Large\bfseries\color{SectionColorScheme}\centering,
+    afterskip = 0pt,
+    aftertitle = {\par\vspace{-10pt}\rule{15em}{2pt}}
+  },
+  subsection = {
+    name = {第, 段},
+    number = \arabic{subsection},
+    format = \Large\bfseries\color{SubsectionColorScheme}\noindent\rule[-2pt]{4pt}{1em}\quad,
+    afterskip = 0pt,
+    indent = 0pt,
   }
 }
 
