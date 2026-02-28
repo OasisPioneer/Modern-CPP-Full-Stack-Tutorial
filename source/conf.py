@@ -141,10 +141,10 @@ latex_elements = {
         \input{CoverPage.tex.txt}
         \input{TitlePage.tex.txt}
 ''',
-    'sphinxsetup': 'TitleColor=DarkGoldenrod',
+    # 'sphinxsetup': 'TitleColor=DarkGoldenrod',
     # 'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
     'printindex': r'\footnotesize\raggedright\printindex',
     'extraclassoptions': 'openany,oneside',
 }
 
-latex_show_urls = 'footnote'
+latex_show_urls = 'inline'
