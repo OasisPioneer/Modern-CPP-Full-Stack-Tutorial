@@ -92,6 +92,13 @@ latex_elements = {
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{eso-pic}
+\usepackage{hyperref}
+
+\hypersetup{
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    bookmarksopenlevel=2
+}
 
 \definecolor{ChapterColorScheme}{RGB}{24, 112, 125}
 \definecolor{SectionColorScheme}{RGB}{98, 137, 196}
@@ -124,8 +131,10 @@ latex_elements = {
     aftertitle = {\par\vspace{-10pt}\rule{15em}{2pt}}
   },
   subsection = {
-    name = {第, 段},
-    number = \arabic{subsection},
+    % name = {第, 段},
+    name = {,},
+    % number = \arabic{subsection},
+    number = \thesection.\arabic{subsection},
     format = \Large\bfseries\color{SubsectionColorScheme}\noindent\rule[-2pt]{4pt}{1em}\quad,
     afterskip = 0pt,
     indent = 0pt,
