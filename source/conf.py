@@ -92,7 +92,10 @@ latex_elements = {
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{eso-pic}
+\usepackage{indentfirst}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 \hypersetup{
     bookmarksnumbered=true,
@@ -100,12 +103,43 @@ latex_elements = {
     bookmarksopenlevel=2
 }
 
+\makeatletter   % 自定义页眉与页脚
+% 章标题更新 \leftmark 节标题更新 \rightmark
+% \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\renewcommand{\chaptermark}[1]{%
+    \markboth{第\thechapter\ 章\ #1}{}
+}
+\renewcommand{\sectionmark}[1]{%
+    \markright{\thesection\ #1}{}
+}
+
+% 自定义 normal 样式：用于文档的普通页面
+\fancypagestyle{normal}{
+    \fancyhf{}                              % 清除所有默认的页眉页脚设置
+    \fancyhead[L]{\nouppercase{\leftmark}}  % 左侧页眉内容
+    \fancyhead[C]{\textbf{\@title}}         % 中间页眉内容
+    \fancyhead[R]{\nouppercase{\rightmark}} % 右侧页眉内容
+    % \fancyfoot[L]{}                       % 左侧页脚内容
+    \fancyfoot[C]{\textbf{\thepage}}        % 中间页脚内容
+    % \fancyfoot[R]{}                       % 右侧页脚内容
+    \renewcommand{\headrulewidth}{0.4pt}    % 设置页眉线的宽度
+    \renewcommand{\footrulewidth}{0.4pt}    % 设置页脚线的宽度
+}
+
+% 自定义 plain 样式：用于章节的首页（默认不显示页眉，只显示页脚）
+\fancypagestyle{plain}{
+    \fancyhf{}                              % 清除所有默认设置
+    \fancyfoot[C]{\textbf{\thepage}}        % 章节首页通常只显示页码
+    \renewcommand{\headrulewidth}{0pt}      % 章节首页通常不显示页眉线
+    \renewcommand{\footrulewidth}{0.4pt}    % 章节首页通常不显示页脚线
+}
+\makeatother
+
 \definecolor{ChapterColorScheme}{RGB}{24, 112, 125}
 \definecolor{SectionColorScheme}{RGB}{98, 137, 196}
 \definecolor{SubsectionColorScheme}{RGB}{88, 161, 174}
-
-\setlength{\parindent}{2em}
-\usepackage{indentfirst}
 
 \ctexset{
   contentsname = {目录},
@@ -140,6 +174,8 @@ latex_elements = {
     indent = 0pt,
   }
 }
+
+\setlength{\parindent}{2em}         % 首行缩进
 
 \makeatletter
 \renewcommand{\@pnumwidth}{2.5em}
