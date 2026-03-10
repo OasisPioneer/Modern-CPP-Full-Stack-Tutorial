@@ -23,13 +23,13 @@ C++ 的基本数据类型分为 "五类"，分别是`整数型`、`浮点型`、
 在上方的表格中可以直观的看到这些类型所能够管理的最大和最小的空间，如果使用例如 `short` 来管理超过它所能够管理范围的整数数据那么这份数据就会损坏出错。
 ```
 
-```{admonition} 举个栗子 🌰
+```{admonition} 举例
 :class: note
 
 尝试使用 `short` 类型存储正整数超过 `32,767` 的数据，例如: `32,768`.
 ```
 
-```{admonition} 👨‍💻 代码演示
+```{admonition} 代码演示
 
 ```CPP
 #include <iostream>
@@ -68,7 +68,7 @@ int main()
 | `double`      | 8                    | 约 15-16 位十进制小数精度                            |
 | `long double` | 8, 12, 或 16         | 提供比 `double` 更高的精度，具体大小和精度依赖于环境 |
 
-```{admonition} 👨‍💻 代码演示
+```{admonition} 代码演示
 
 ```CPP
 #include <iostream>
@@ -107,7 +107,7 @@ int main() {
 `wchar_t` 能够存储的不仅限于普通的文本，它还可以用来存储一些特殊的符号例如 `©` 符号。
 
 
-```{admonition} 👨‍💻 代码演示
+```{admonition} 代码演示
 
 ```CPP
 #include <iostream>
@@ -131,7 +131,7 @@ int main() {
 | ------ | -------------------- | ------------------------------- |
 | `bool` | 1                    | 只能是 `true` 或 `false` 两个值 |
 
-```{admonition} 👨‍💻 代码演示
+```{admonition} 代码演示
 
 ```CPP
 #include <iostream>
@@ -156,7 +156,7 @@ int main() {
 | ------ | -------------------- | -------------------------------------------------- |
 | `void` | 不适用               | 表示“无类型”，常用于函数返回类型或泛型指针 `void*` |
 
-```{admonition} 👨‍💻 代码演示
+```{admonition} 代码演示
 
 ```CPP
 void demo(void){
