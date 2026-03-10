@@ -72,6 +72,7 @@ latex_engine = 'xelatex'
 latex_use_xindy = True
 latex_toplevel_sectioning = 'part'
 latex_elements = {
+    'babel': '',
     'papersize': 'a4paper',
     'pointsize': '11pt',
     'passoptionstopackages': r'''
