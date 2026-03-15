@@ -193,6 +193,7 @@ latex_elements = {
     % number = \arabic{subsection},
     number = \thesection.\arabic{subsection},
     format = \Large\bfseries\color{SubsectionColorScheme}\noindent\rule[-2pt]{4pt}{1em}\quad,
+    beforeskip = 0pt,
     afterskip = 0pt,
     indent = 0pt,
   }
