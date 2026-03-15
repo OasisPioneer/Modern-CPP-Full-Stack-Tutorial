@@ -18,6 +18,9 @@ extensions = [
     'myst_parser',
     'sphinxcontrib.mermaid',
     'sphinx_copybutton',
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
 ]
 
 source_suffix = {
@@ -25,6 +28,25 @@ source_suffix = {
     '.txt': 'markdown',
     '.md': 'markdown',
 }
+
+myst_enable_extensions = [
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
+]
+
+copybutton_prompt_text = r">>> |\.\.\. |\$ "
+copybutton_prompt_is_regexp = True
 
 templates_path = ['_templates']
 exclude_patterns = []
