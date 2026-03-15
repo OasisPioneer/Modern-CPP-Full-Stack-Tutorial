@@ -16,28 +16,24 @@
 
 ### 为什么推荐 Linux（Ubuntu）
 
-- **开源且自由**：你可以深入理解系统底层机制。
-    
+- **开源且自由**：你可以获取系统源码深入理解系统底层机制。
 - **稳定可靠**：适合长期开发任务。
-    
 - **资料丰富**：遇到问题几乎总能找到解决方案。
-    
 - **命令行高效**：可用强大的工具链完成几乎所有开发操作。
-    
 - **容器支持完善**：Docker、Kubernetes 等在 Linux 上运行更流畅。
-    
 
 ### 下载与安装
 
 - 官方下载地址：  
     [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop)
-    
 - 官方安装教程：  
     [https://ubuntu.com/tutorials/install-ubuntu-desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop)
-    
 
-> **提示**：  
-> 对于想保留 Windows 的用户，可以考虑使用 **WSL（Windows Subsystem for Linux）**; 它能在 Windows 上原生运行 Linux 环境，是非常友好的选择。
+```{hint}
+对于想保留 Windows 的用户，可以考虑使用 **WSL (Windows Subsystem for Linux)** 它能在 Windows 上原生运行 Linux 环境，是非常友好的选择。
+
+WSL: [https://learn.microsoft.com/zh-cn/windows/wsl/](https://learn.microsoft.com/zh-cn/windows/wsl/)
+```
 
 ## 开发环境的组成
 
@@ -54,15 +50,11 @@
 
 ## 安装 C++ 开发环境
 
-以下以 **Ubuntu** 为例，介绍如何配置 C++ 开发环境。
+以 **Ubuntu** 为例，讲解如何在系统上配置 C++ 开发环境。
 
-### 打开终端
+### 逐个安装
 
-使用快捷键：`Ctrl + Alt + T` 或通过“应用程序菜单” → 搜索 “终端” → 打开
-
-### 安装核心组件
-
-依次执行以下命令：
+使用快捷键：`Ctrl + Alt + T` 或通过“应用程序菜单” → 搜索 “终端” → 打开，依次执行以下命令：
 
 ```bash
 sudo apt-get update               # 更新软件包列表
@@ -73,11 +65,24 @@ sudo apt-get install make         # 安装构建工具 Make
 sudo apt-get install cmake        # 安装构建系统生成器 CMake
 ```
 
-> 以上命令需要网络连接，并可能提示输入管理员密码。
+也可使用下方代码进行安装减少编写重复代码
+
+```bash
+sudo apt-get install gcc g++ gdb make cmake
+```
+
+- 优点:
+    * 控制精细: 你可以选择只安装你需要的工具，比如只学 C 语言，可以只装 gcc
+    * 节省空间: 不会安装一些你不需要的依赖
+    * 学习价值高: 对初学者来说，每个命令安装一个工具，有助于理解编译器、调试器、构建工具之间的区别，例如 gcc 是 C 编译器，g++ 是 C++ 编译器，make 是构建工具，cmake 是生成 Makefile 的工具。
+- 缺点:
+    * 容易遗漏依赖: 比如 make 可能依赖一些基础库，如果没有同时安装就会报错
+    * 安装步骤繁琐: 每个工具都要单独敲命令不够方便
+    * 调试环境不完整: 例如有些常用头文件、标准库或者开发文件没有安装，需要额外安装
 
 ---
 
-### 一键安装（可选）
+### 集成安装
 
 如果希望一条命令安装全部必备组件：
 
@@ -85,11 +90,12 @@ sudo apt-get install cmake        # 安装构建系统生成器 CMake
 sudo apt-get install build-essential
 ```
 
-> 这种方式虽然方便，但不建议初学者使用。
-> 
-> 建议你手动安装每个组件，以便理解每个工具的作用。
-
----
+- 优点:
+    * 安装简单: 一条命令搞定编译环境，省心省力
+    * 依赖完整: 初学者不用担心缺少库文件或头文件，编译 hello world 程序不会报错
+- 缺点:
+    * 学习机会少: 初学者可能不清楚一个基本环境到底需要哪些工具，因为一条命令就把所有东西都装好了
+    * 安装的工具多: 可能会安装你暂时不需要的工具，占用空间（但现代系统影响不大）
 
 ### 验证安装
 
@@ -103,7 +109,7 @@ make --version                  # Make 构建工具
 cmake --version                 # CMake 构建工具
 ```
 
-如果命令返回版本号，说明安装成功。
+如果终端返回版本号，说明安装成功。
 
 ## 开发工具（IDE 或编辑器）
 
@@ -112,23 +118,16 @@ cmake --version                 # CMake 构建工具
 
 |工具|类型|平台|特点|
 |---|---|---|---|
-|**CLion**|IDE|全平台|专为 C/C++ 设计，功能强大，支持 CMake，个人可免费使用|
-|**VS Code**|编辑器|全平台|轻量、插件丰富，安装 C/C++ 插件即可变身 IDE|
+|**CLion**|IDE|跨平台|专为 C/C++ 设计，功能强大，支持 CMake，个人可免费使用|
+|**VS Code**|编辑器|跨平台|轻量、插件丰富，安装 C/C++ 插件即可变身 IDE|
 |**Visual Studio**|IDE|Windows|微软官方工具，Windows 平台最强 IDE|
 |**Xcode**|IDE|macOS|苹果官方工具，支持 C++ 与 Swift|
-|**Vim / Emacs**|编辑器|全平台|极高的可定制性，高手利器|
-
-> **初学者推荐**：CLion 或 VS Code  
-> CLion 简洁易用，一步到位；VS Code 轻量灵活、插件多。
 
 ## 参考资料
 
 - [Ubuntu 官方下载地址](https://ubuntu.com/download/desktop)
-    
 - [Ubuntu 官方安装教程](https://ubuntu.com/tutorials/install-ubuntu-desktop)
-    
+- [WSL 官方地址](https://learn.microsoft.com/zh-cn/windows/wsl/)
 - [JetBrains CLion 官方网站](https://www.jetbrains.com/clion/)
-    
 - [CLion 安装指南](https://www.jetbrains.com/help/clion/installation-guide.html)
-    
 - [Visual Studio Code 官方网站](https://code.visualstudio.com/)
