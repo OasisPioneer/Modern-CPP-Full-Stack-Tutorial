@@ -110,7 +110,6 @@ int main() {
     
     std::cout << "isTrue: " << isTrue << std::endl;
     std::cout << "isFalse: " << isFalse << std::endl;
-    std::cout << "isTrue的实际值: " << (isTrue ? "true" : "false") << std::endl;
     
     return 0;
 }
@@ -127,6 +126,7 @@ int main() {
 ```CPP
 void demo(void){
     std::cout << "我不接收任何参数 也不返回任何值" << std::endl;
+    return;
 }
 ```
 
