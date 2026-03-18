@@ -57,13 +57,19 @@ double x = 3.14 * 2;
 
 普通常量其实就是一个只读的变量，定义普通常量需要使用 **`const`** 关键字。
 
-定义语法: 
+普通常量语法: 
 
 ```CPP
-const 数据类型 常量名称 = 常量的值;
+const 数据类型 常量名称 = 值;
 ```
 
-可以理解为就是在变量的前面增加了 `const`。
+现代常量语法:
+
+```CPP
+const 数据类型 常量名称{值};
+```
+
+常量可以理解为就是在变量的前面增加了 `const` 关键字然后让变量从读写变成了只读。
 
 普通常量有数据类型、作用域、编译器检查相比宏常量更加安全。
 
@@ -71,36 +77,37 @@ const 数据类型 常量名称 = 常量的值;
 需要注意的是对于下方这种定义，编译器在编译的时候不保证知道常量的值。
 
 ```CPP
-const int x = rand(); // rand() 随机数函数，返回伪随机数。
+// rand() 随机数函数，返回伪随机数。
+const int x{rand()}; // 在编译期 x 的值未知，只有在运行期才知道。
 ```
 
-普通常量使用场景:
+普通常量的常见使用场景:
 
-- 函数参数:
+- 函数参数保护:
 
 ```CPP
-void foo(const std::string& s); // 防止参数被修改
+void foo(const std::string& s); // 防止函数内部修改参数
 ```
 
 - 只读变量:
 
 ```CPP
-const int max_users = 1000;
+const int max_users{1000};
 ```
-
-- 类成员 ……
 
 ## 编译期常量
 
-自 C++ 11 起支持使用 **`constexpr`** 定义常量，它的本质就是在编译阶段就确定的值。
+自 C++ 11 起支持使用 **`constexpr`** 定义常量，用于定义必须在编译期就能确定值的常量。
 
 定义语法:
 
+constexpr &nbsp; 数据类型 &nbsp; 常量名称{值};
+
 ```CPP
-constexpr 数据类型 常量名称 = 常量的值;
+constexpr int a{10};
 ```
 
-constexpr 必须编译期可计算，编译器可将其极限的优化。
+constexpr 必须是编译期可计算的表达式，允许编译器在编译阶段完成计算，从而避免运行时开销。
 
 使用场景:
 
@@ -111,13 +118,13 @@ constexpr int square(int x) {
     return x * x;
 }
 
-constexpr int a = square(5);
+constexpr int a{square(5)};
 ```
 
 - 数组大小:
 
 ```CPP
-constexpr int size = 100;
+constexpr int size{100};
 int arr[size];
 ```
 
@@ -128,7 +135,7 @@ int arr[size];
 例如:
 
 ```CPP
-const int x = rand(); // 合法但 x 的值只有在运行期才知道
+const int x{rand()}; // 合法但 x 的值只有在运行期才知道
 ```
 
 - constexpr 编译期就必须确定值
@@ -136,17 +143,15 @@ const int x = rand(); // 合法但 x 的值只有在运行期才知道
 例如:
 
 ```CPP
-constexpr int a = 10; // 能在编译阶段算出来否则直接报错
+constexpr int a{10}; // 能在编译阶段算出来否则直接报错
+
+constexpr int x{rand()}; // 编译失败，rand() 函数只有在运行期才会有返回值
 ```
 
 ## 如何选择
 
-1. 类型安全 + 普通常量: const
-2. 追求性能 / 编译期优化: constexpr
-3. 跨平台 / 编译控制: #define
+1. 能在编译期确定的值 → 使用 constexpr
+2. 需要运行期确定但不希望修改 → 使用 const
+3. 仅用于编译控制（如平台/调试） → 使用 #define
 
-优先级: 在现代 C++ 中，优先选择 constexpr，其次 const，尽量避免使用宏来定义常量。
-
-- 能 constexpr 就 constexpr
-- 需要运行时值但不希望修改 → const
-- 宏只用于条件编译或平台适配
+优先级: 在现代 C++ 中，优先选择 constexpr，其次 const，在现代 C++ 中，应避免使用宏定义常量。
