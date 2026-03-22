@@ -15,9 +15,9 @@ auto 变量名称 {值};
 代码演示:
 
 ```CPP
-auto x = 10;      // int
-auto y = 3.14;    // double
-auto z = 'A';     // char
+auto x{10};      // int
+auto y{3.14};    // double
+auto z{'A'};     // char
 ```
 
 ```{attention}
@@ -37,6 +37,16 @@ const int a{10};
 auto b{a};        // b 的类型是 int（const 被丢弃）
 const auto c{a};  // c 的类型是 const int
 ```
+
+```CPP
+int x{10};
+int& ref = x;
+
+auto a{ref};   // a 是 int（引用被丢弃）
+auto& b{ref};  // b 是 int&
+```
+
+auto 在推导时默认会丢弃引用，如果需要保留引用，必须使用 auto&。
 
 优点:
 
@@ -73,10 +83,19 @@ decltype(x) y{20}; // y 的类型是 int
 ```CPP
 const int a{10};
 
-decltype(a) b = 10; // b 的类型是 const int
+decltype(a) b{10}; // b 的类型是 const int
 ```
 
 decltype 会完整保留 const 属性，如果赋值不符合 const 要求将导致编译错误。
+
+```CPP
+int x{10};
+
+decltype(x) a{x};   // int
+decltype((x)) b{x}; // int&
+```
+
+decltype(x) 表示变量类型，而 decltype((x)) 会被视为表达式，从而推导为引用类型。
 
 ## 使用建议
 
