@@ -67,3 +67,19 @@ Hello World!
 ```{tip}
 事实上在 C++ 98 标准也就是第一个正式标准发布的时候，程序的主函数 `int main()` 就已经可以不使用 `return` 语句了。当程序在主函数结束时未遇到返回语句则默认执行返回语句，它等价于 `return 0;`.
 ```
+
+## 转义序列
+
+C++ 支持使用转义序列表示特殊字符
+
+```CPP
+#include <iostream>
+
+int main() {
+    std::cout << "Hello\tWorld!\n";  // \t 制表符，\n 换行符
+    std::cout << "Hello\\World!\n";  // \\ 反斜杠
+    std::cout << "Hello\"World!\"\n"; // \" 双引号
+    std::cout << "Hello\'World!\'\n"; // \' 单引号
+    std::cout << "Hello\0World!\n";   // \0 空字符（字符串结束符）
+}
+```
