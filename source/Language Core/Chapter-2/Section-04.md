@@ -289,6 +289,61 @@ int main() {
 }
 ```
 
+枚举类的优势
+
+强作用域:
+
+枚举值被封装在枚举类内部，不会污染外部作用域
+
+```CPP
+enum class Color { Red, Green, Blue };
+enum class TrafficLight { Red, Yellow, Green };  // 没问题！
+
+Color c = Color::Red;
+TrafficLight t = TrafficLight::Red;  // 两者互不冲突
+```
+
+强类型（无隐式转换）:
+
+枚举类不会隐式转换为 int，必须显式转换
+
+```CPP
+enum class Color { Red, Green, Blue };
+Color c = Color::Red;
+
+// int num = c;  // 错误！不能隐式转换
+int num = static_cast<int>(c);  // 正确，显式转换为 int（值为 0）
+
+// if (c == 0) {  // 错误！不能直接和整数比较
+if (c == Color::Red) {  // 正确，只能和同类型枚举值比较
+    // ...
+}
+```
+
+### 指定底层类型
+
+无论是传统枚举还是枚举类，都可以显式指定底层数据类型（默认是 int）。这在需要控制内存大小或与特定硬件 / 协议交互时很有用
+
+```CPP
+// 枚举类指定底层类型为 char（节省空间）
+enum class Color : char {
+    Red,
+    Green,
+    Blue
+};
+
+// 传统枚举也可以指定底层类型（C++11 起）
+enum Status : unsigned int {
+    OK = 0,
+    Warning = 1,
+    Error = 2
+};
+
+// 查看枚举大小
+std::cout << sizeof(Color) << std::endl;  // 输出 1（char 的大小）
+std::cout << sizeof(Status) << std::endl; // 输出 4（unsigned int 的大小）
+```
+
 ## 如何选择
 
 - 能在编译期确定的值 → 使用 constexpr
