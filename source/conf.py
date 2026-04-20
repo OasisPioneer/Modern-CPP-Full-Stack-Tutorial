@@ -119,6 +119,7 @@ latex_elements = {
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage{array}
 
 \hypersetup{
     bookmarksnumbered=true,
@@ -200,6 +201,8 @@ latex_elements = {
 }
 
 \setlength{\parindent}{2em}         % 首行缩进
+
+\newcolumntype{T}{C}                % 表格居中
 
 \makeatletter
 \renewcommand{\@pnumwidth}{2.5em}
