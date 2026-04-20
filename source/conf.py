@@ -201,14 +201,15 @@ latex_elements = {
   }
 }
 
-\setlength{\parindent}{2em}         % 首行缩进
-
-\newcolumntype{T}{C}                % 表格居中
-
+% 目录布局
 \makeatletter
 \renewcommand{\@pnumwidth}{2.5em}
 \renewcommand{\@tocrmarg}{3.5em}
 \makeatother
+
+\setlength{\parindent}{2em}         % 首行缩进
+
+\newcolumntype{T}{C}                % 表格居中
 ''',
     'maketitle': r'''
         \input{CoverPage.tex.txt}
