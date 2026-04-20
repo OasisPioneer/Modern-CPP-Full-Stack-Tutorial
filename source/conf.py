@@ -93,6 +93,7 @@ latex_additional_files = [
 latex_engine = 'xelatex'
 latex_use_xindy = True
 latex_toplevel_sectioning = 'part'
+latex_table_style = ['booktabs']
 latex_elements = {
     'babel': '',
     'papersize': 'a4paper',
