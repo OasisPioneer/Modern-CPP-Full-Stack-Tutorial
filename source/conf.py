@@ -125,7 +125,11 @@ latex_elements = {
 \hypersetup{
     bookmarksnumbered=true,
     bookmarksopen=true,
-    bookmarksopenlevel=2
+    bookmarksopenlevel=2,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=darkgray
 }
 
 \makeatletter   % 自定义页眉与页脚
