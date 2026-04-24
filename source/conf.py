@@ -107,7 +107,7 @@ latex_elements = {
 \setsansfont{Source Han Sans SC}
 \setmonofont{Fira Code}
 % [CN]
-\setCJKmainfont{Source Han Sans SC}
+\setCJKmainfont{Source Han Serif SC}
 \setCJKsansfont{Source Han Sans SC}
 \setCJKmonofont{Source Han Sans SC}
 ''',
