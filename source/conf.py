@@ -171,7 +171,7 @@ latex_elements = {
 \definecolor{SubsectionColorScheme}{RGB}{88, 161, 174}
 
 \ctexset{
-  contentsname = {目录},
+  contentsname = {目\kern0.8em录},
   part = {
     name = {第, 部分},
     number = \chinese{part},
