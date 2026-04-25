@@ -166,10 +166,6 @@ latex_elements = {
 }
 \makeatother
 
-\definecolor{ChapterColorScheme}{RGB}{24, 112, 125}
-\definecolor{SectionColorScheme}{RGB}{98, 137, 196}
-\definecolor{SubsectionColorScheme}{RGB}{88, 161, 174}
-
 \ctexset{
   contentsname = {目\kern0.8em录},
   part = {
@@ -185,24 +181,24 @@ latex_elements = {
     name = {第, 章},
     number = \arabic{chapter},
     fixskip = true,
-    format = \Huge\bfseries\color{ChapterColorScheme}\centering,
+    format = \huge\bfseries\centering,
     beforeskip = 0pt, 
     afterskip = 15pt,
-    aftertitle = {\par\vspace{-15pt}\rule{\textwidth}{2pt}} 
+    % aftertitle = {\par\vspace{-15pt}\rule{\textwidth}{2pt}} 
   },
   section = {
     name = {第, 节},
     number = \arabic{section},
-    format = \Large\bfseries\color{SectionColorScheme}\centering,
+    format = \Large\bfseries,
     afterskip = 0pt,
-    aftertitle = {\par\vspace{-10pt}\rule{15em}{2pt}}
+    % aftertitle = {\par\vspace{-10pt}\rule{15em}{2pt}}
   },
   subsection = {
     % name = {第, 段},
     name = {,},
     % number = \arabic{subsection},
     number = \thesection.\arabic{subsection},
-    format = \Large\bfseries\color{SubsectionColorScheme}\noindent\rule[-2pt]{4pt}{1em}\quad,
+    format = \large\bfseries\noindent\rule[-2pt]{2pt}{1em}\quad,
     beforeskip = 0pt,
     afterskip = 0pt,
     indent = 0pt,
