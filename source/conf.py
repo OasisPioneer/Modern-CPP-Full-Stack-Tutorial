@@ -119,8 +119,10 @@ latex_elements = {
 \usepackage{indentfirst}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{array}
+\usepackage[most]{tcolorbox}
+
+\pagestyle{fancy}
 
 \hypersetup{
     bookmarksnumbered=true,
