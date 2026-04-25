@@ -175,6 +175,10 @@ latex_elements = {
   part = {
     name = {第, 部分},
     number = \chinese{part},
+    format = \centering\bfseries,
+    nameformat = \Huge\bfseries\color{gray},
+    aftername = {\par\vspace{0em}},
+    titleformat = {\fontsize{40pt}{48pt}\selectfont\bfseries},
     pagestyle = empty           % 强制页面不带页码
   },
   chapter = {
