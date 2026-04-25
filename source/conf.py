@@ -23,6 +23,8 @@ extensions = [
     "sphinx.ext.viewcode",
 ]
 
+autosectionlabel_prefix_document = True
+
 source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'markdown',
