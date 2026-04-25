@@ -121,6 +121,8 @@ latex_elements = {
 \usepackage{fancyhdr}
 \usepackage{array}
 \usepackage[most]{tcolorbox}
+\usepackage{needspace}
+\usepackage{etoolbox}
 
 \pagestyle{fancy}
 
@@ -212,6 +214,11 @@ latex_elements = {
 \renewcommand{\@pnumwidth}{2.5em}
 \renewcommand{\@tocrmarg}{3.5em}
 \makeatother
+
+% 自动换页
+% \pretocmd{\chapter}{\Needspace{10\baselineskip}}{}{}
+\pretocmd{\section}{\Needspace{6\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
 
 \setlength{\parindent}{2em}         % 首行缩进
 
