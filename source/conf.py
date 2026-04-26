@@ -101,7 +101,6 @@ latex_elements = {
 \usepackage{graphicx}
 \usepackage{eso-pic}
 \usepackage{indentfirst}
-\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{array}
 \usepackage[most]{tcolorbox}
