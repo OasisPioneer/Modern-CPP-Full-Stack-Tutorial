@@ -16,36 +16,13 @@ author = '龙森'
 # extensions = []
 extensions = [
     'myst_parser',
-    'sphinxcontrib.mermaid',
     'sphinx_copybutton',
-    "sphinx.ext.autosectionlabel",
-    "sphinx.ext.todo",
-    "sphinx.ext.viewcode",
 ]
-
-autosectionlabel_prefix_document = True
 
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.txt': 'markdown',
     '.md': 'markdown',
 }
-
-myst_enable_extensions = [
-    "amsmath",
-    "attrs_inline",
-    "colon_fence",
-    "deflist",
-    "dollarmath",
-    "fieldlist",
-    "html_admonition",
-    "html_image",
-    "replacements",
-    "smartquotes",
-    "strikethrough",
-    "substitution",
-    "tasklist",
-]
 
 copybutton_prompt_text = r">>> |\.\.\. |\$ "
 copybutton_prompt_is_regexp = True
