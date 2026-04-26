@@ -110,6 +110,10 @@ latex_elements = {
 
 \pagestyle{fancy}
 
+% 消除页眉警告
+\setlength{\headheight}{14pt}
+\addtolength{\topmargin}{-2pt}
+
 \hypersetup{
     bookmarksnumbered=true,
     bookmarksopen=true,
