@@ -86,6 +86,8 @@ latex_elements = {
 \PassOptionsToPackage{svgnames}{xcolor}
 ''',
     'fontpkg': r'''
+% 全局伪斜体
+\defaultfontfeatures+{AutoFakeSlant=0.2}
 % [EN]
 \setmainfont{Source Han Sans SC}
 \setsansfont{Source Han Sans SC}
@@ -106,6 +108,7 @@ latex_elements = {
 \usepackage[most]{tcolorbox}
 \usepackage{needspace}
 \usepackage{etoolbox}
+\usepackage{bookmark}
 
 \pagestyle{fancy}
 
@@ -120,7 +123,9 @@ latex_elements = {
     colorlinks=true,
     linkcolor=black,
     citecolor=black,
-    urlcolor=darkgray
+    urlcolor=darkgray,
+    hypertexnames=false,
+    pdfencoding=auto,
 }
 
 \makeatletter   % 自定义页眉与页脚
@@ -209,7 +214,7 @@ latex_elements = {
 
 \setlength{\parindent}{2em}         % 首行缩进
 
-\newcolumntype{T}{C}                % 表格居中
+% \newcolumntype{T}{C}                % 表格居中
 ''',
     'maketitle': r'''
         \input{CoverPage.tex.txt}
