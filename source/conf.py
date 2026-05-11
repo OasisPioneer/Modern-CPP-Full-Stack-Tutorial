@@ -20,17 +20,18 @@ extensions = [
 ]
 
 myst_enable_extensions = [
-    "alert",
     "amsmath",
+    "attrs_inline",
     "colon_fence",
     "deflist",
     "dollarmath",
     "fieldlist",
-    "gfm_autolink",
     "html_admonition",
     "html_image",
+    "linkify",
     "replacements",
     "smartquotes",
+    "strikethrough",
     "substitution",
     "tasklist",
 ]
