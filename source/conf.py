@@ -19,6 +19,22 @@ extensions = [
     'sphinx_copybutton',
 ]
 
+myst_enable_extensions = [
+    "alert",
+    "amsmath",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "gfm_autolink",
+    "html_admonition",
+    "html_image",
+    "replacements",
+    "smartquotes",
+    "substitution",
+    "tasklist",
+]
+
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
