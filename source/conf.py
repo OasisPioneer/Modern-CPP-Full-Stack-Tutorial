@@ -20,6 +20,7 @@ extensions = [
 ]
 
 myst_enable_extensions = [
+    "attrs_block",
     "colon_fence",
 ]
 
@@ -191,6 +192,7 @@ latex_elements = {
     number = \arabic{section},
     format = \Large\bfseries,
     afterskip = 0pt,
+    break = \Needspace{10\baselineskip},
     % aftertitle = {\par\vspace{-10pt}\rule{15em}{2pt}}
   },
   subsection = {
@@ -202,6 +204,7 @@ latex_elements = {
     beforeskip = 0pt,
     afterskip = 0pt,
     indent = 0pt,
+    break = \Needspace{6\baselineskip},
   }
 }
 
@@ -211,10 +214,10 @@ latex_elements = {
 \renewcommand{\@tocrmarg}{3.5em}
 \makeatother
 
-% 自动换页
+% 自动换页 --- 新方案 ctexset break
 % \pretocmd{\chapter}{\Needspace{10\baselineskip}}{}{}
-\pretocmd{\section}{\Needspace{6\baselineskip}}{}{}
-\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+% \pretocmd{\section}{\Needspace{10\baselineskip}}{}{}
+% \pretocmd{\subsection}{\Needspace{6\baselineskip}}{}{}
 
 \setlength{\parindent}{2em}         % 首行缩进
 
