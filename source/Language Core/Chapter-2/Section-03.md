@@ -124,3 +124,9 @@ short c{3};
 部分软件开发公司也会在公司内部规定一份编程语法同时也有来自大厂开源的编程语法规范。
 
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
+
+```{eval-rst}
+.. raw:: latex
+
+   \clearpage
+```
